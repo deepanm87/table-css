@@ -27,10 +27,10 @@
             <table id="data-table">
                 <thead>
                     <tr>
-                        <th class="name">Name <i class="fas fa-sort" id="icon-0"></i></th>
-                        <th class="name">Email <i class="fas fa-sort" id="icon-0"></i></th>
-                        <th class="name">Username <i class="fas fa-sort" id="icon-0"></i></th>
-                        <th class="name">Country <i class="fas fa-sort" id="icon-0"></i></th>
+                        <th onclick="sortTable(0)" class="name">Name <i class="fas fa-sort" id="icon-0"></i></th>
+                        <th onclick="sortTable(1)" class="name">Email <i class="fas fa-sort" id="icon-0"></i></th>
+                        <th onclick="sortTable(2)" class="name">Username <i class="fas fa-sort" id="icon-0"></i></th>
+                        <th onclick="sortTable(3)" class="name">Country <i class="fas fa-sort" id="icon-0"></i></th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -38,11 +38,11 @@
             </table>
 
             <div class="pagination" id="pagination">
-                <button type="button" id="prev-btn" title="Previous Page" onclick="prevPage()">
+                <button type="button" id="prev-btn" title="Previous Page">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <span id="page-number">1</span>
-                <button type="button" id="next-btn" title="Next Page" onclick="nextPage()">
+                <button type="button" id="next-btn" title="Next Page">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>

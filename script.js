@@ -9,8 +9,10 @@ const nextBtn = document.getElementById("next-btn")
 const pageNumber = document.getElementById("page-number")
 
 let data = []
+let sortedData = []
 let currentPage = 1
 const rowsPerPage = 10
+let sortDirection = {}
 
 async function fetchData() {
     spinner.style.display = 'flex'
@@ -19,8 +21,9 @@ async function fetchData() {
         await new Promise(resolve => setTimeout(resolve, 1000))
         const response = await fetch("https://randomuser.me/api/?results=50")
         const json = await response.json()
-        const data = json.results
-        displayTable(data)
+        data = json.results
+        sortedData = [...data]
+        displayTable(sortedData)
         updateButtons()
     } catch (e) {
         console.error(`Error fetching data: ${e}`)
@@ -49,18 +52,69 @@ function displayTable(dataToDisplay) {
     })
 }
 
+function sortTable(columnIndex) {
+    clearSortIcons()
+    if(!sortDirection[columnIndex]) {
+        sortDirection[columnIndex] = 'asc'
+    }
+    sortedData = [...data].sort((a, b) => {
+        let valA, valB
+        switch(columnIndex) {
+            case 0:
+                valA = `${a.name.first} ${a.name.last}`
+                valB = `${b.name.first} ${b.name.last}`
+                break
+            case 1:
+                valA = a.email
+                valB = b.email
+                break
+            case 2:
+                valA = a.login.username
+                valB = b.login.username
+                break
+            case 3: 
+                valA = a.location.country
+                valB = b.location.country
+                break
+        }
+        if(sortDirection[columnIndex] === "desc") {
+            return valB.localeCompare(valA)
+        } else {
+            return valA.localeCompare(valB)
+        }
+    })
+    sortDirection[columnIndex] = sortDirection[columnIndex] === 'asc' ? 'desc' : 'asc'
+
+    updateSortIcon(columnIndex, sortDirection[columnIndex])
+
+    displayTable(sortedData)
+}
+
+function clearSortIcons() {
+    for(let i = 0; i < 4; i++) {
+        const icon = document.getElementById(`icon-${i}`)
+        icon.className = 'fas fa-sort'
+    }
+}
+
+function updateSortIcon(columnIndex, direction) {
+    const icon = document.getElementById(`icon-${columnIndex}`)
+    icon.className = direction === 'asc' ? 'fas fa-sort-down' : 'fas fa-sort-up'
+
+}
+
 function prevPage() {
     if(currentPage > 1) {
         currentPage--
-        displayTable(data)
+        displayTable(sortedData)
         updateButtons()
     }
 }
 
 function nextPage() {
-    if(currentPage * rowsPerPage < data.length) {
+    if(currentPage * rowsPerPage < sortedData.length) {
         currentPage++
-        displayTable(data)
+        displayTable(sortedData)
         updateButtons()
     }
 }
@@ -70,6 +124,9 @@ function updateButtons() {
     prevBtn.disabled = currentPage === 1
     nextBtn.disabled = currentPage * rowsPerPage >= data.length
 }
+
+prevBtn.addEventListener("click", prevPage)
+nextBtn.addEventListener("click", nextPage)
 
 fetchData()
 
