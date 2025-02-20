@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="theme-toggle" id="theme-toggle">Dark Mode</div>
+<body class="dark-mode">
+    <div class="theme-toggle" id="theme-toggle" hidden>Dark Mode</div>
 
     <div class="container">
         <h1>Most Active Users</h1>
     
-    <div class="spinner" id="spinner">
+    <div class="spinner" id="spinner" hidden>
         <i class="fa-solid fa-spinner fa-spin-pulse"></i>
     </div>
     <table id="data-table">
@@ -64,7 +64,7 @@
         </tbody>
     </table>
 
-    <div class="pagination">
+    <div class="pagination" hidden>
         <button type="button" id="prev-btn" title="Previous Page">
             <i class="fas fa-chevron-left"></i>
         </button>
