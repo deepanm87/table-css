@@ -21,7 +21,7 @@
 
         <div class="container">
             <h1>Most Active Users</h1>
-            <div class="spinner" id="spinner" hidden>
+            <div class="spinner" id="spinner">
                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
             </div>
             <table id="data-table">
@@ -34,75 +34,15 @@
                     </tr>
                 </thead>
                 <tbody id="table-body">
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Name">Name Here</td>
-                        <td data-label="Email">Email Here</td>
-                        <td data-label="Username">Username Here</td>
-                        <td data-label="Country">Country Here</td>
-                    </tr>
                 </tbody>
             </table>
 
-            <div class="pagination">
-                <button type="button" id="prev-btn" title="Previous Page">
+            <div class="pagination" id="pagination">
+                <button type="button" id="prev-btn" title="Previous Page" onclick="prevPage()">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <span id="page-number">1</span>
-                <button type="button" id="next-btn" title="Next Page">
+                <button type="button" id="next-btn" title="Next Page" onclick="nextPage()">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>

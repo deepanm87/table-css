@@ -59,6 +59,10 @@ h1 {
     color: var(--primary-color);
 }
 
+#spinner {
+    display: none;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,6 +71,10 @@ table {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+#data-table {
+    display: none;
 }
 
 th, td {
@@ -107,6 +115,10 @@ tr:hover {
     height: 55px;
 }
 
+#pagination {
+    display: none;
+}
+
 .pagination button {
     background-color: transparent;
     border: none;
@@ -138,6 +150,7 @@ tr:hover {
     color: var(--primary-color);
     cursor: pointer;
     transition: color 0.3s;
+    margin-top: 10px;
 }
 
 .theme-toggle:hover {
