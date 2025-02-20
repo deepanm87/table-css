@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com
+    ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle" id="theme-toggle">Dark Mode</div>
+
+    <div class="container">
+        <h1>Most Active Users</h1>
+    
+    <div class="spinner" id="spinner">
+        <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+    </div>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th class="name">Name <i class="fas fa-sort" id="icon-0"></i></th>
+                <th class="name">Email <i class="fas fa-sort" id="icon-0"></i></th>
+                <th class="name">Username <i class="fas fa-sort" id="icon-0"></i></th>
+                <th class="name">Country <i class="fas fa-sort" id="icon-0"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name Here</td>
+                <td>Email Here</td>
+                <td>Username Here</td>
+                <td>Country Here</td>
+            </tr>
+            <tr>
+                <td>Name Here</td>
+                <td>Email Here</td>
+                <td>Username Here</td>
+                <td>Country Here</td>
+            </tr>
+            <tr>
+                <td>Name Here</td>
+                <td>Email Here</td>
+                <td>Username Here</td>
+                <td>Country Here</td>
+            </tr>
+            <tr>
+                <td>Name Here</td>
+                <td>Email Here</td>
+                <td>Username Here</td>
+                <td>Country Here</td>
+            </tr>
+            <tr>
+                <td>Name Here</td>
+                <td>Email Here</td>
+                <td>Username Here</td>
+                <td>Country Here</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button type="button" id="prev-btn" title="Previous Page">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <span id="page-number">1</span>
+        <button type="button" id="next-btn" title="Next Page">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
